@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Typing speed</title>
+</head>
+<body>
+    <h1 class="titlu">Typing Speed Test!</h1>
+    <br>
+    <br>
+    <div class="conteiner">
+        <section class="words"> 
+            <div class="row">
+                <button id="start" onclick="startWrite()">Start</button>
+                <button id="check" onclick="checkWord()">Check</button>
+                <button id="reset" onclick="reset()">Reset</button>
+                <div class="time" id="timer">60</div>
+            </div>  
+            <div class="current">
+                <input type="text"  id="word" placeholder="Type here...">
+                <p>
+                    After the time is up you have to press the "Check" button to see how many words you had written corectly!
+                </p>
+                
+            </div>
+        </section>
+        <section class="words">
+            <div class="current getWords"  id="savedWords"></div>
+        </section>
+    </div>
+    <div class="modal hidden"> 
+        <button class="close-modal">&times;</button>
+        <div  id="newText"></div>
+        <br>
+        <div id="numberWords"></div>
+    </div>
+    <div class="overlay hidden"></div>
+  
+    <script src="script.js"></script>
+    
+</body>
+</html>
