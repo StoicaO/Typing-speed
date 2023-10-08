@@ -5,19 +5,25 @@ const overlay = document.querySelector('.overlay');
 const modal = document.querySelector(".modal");
 const btnCloseWindow = document.querySelector(".close-modal");
 let countWords = 0;
-let seconds = 60;
+let seconds = 10;
 let interval = null;
 let start = true;
 let allowInput = false;
 inputElement.disabled = true;
 
-let text = "a soft and fluffy velveteen rabbit lived in a toybox in a boy is room" +
-  " each day the boy opened the toybox and picked up velveteen rabbit and velveteen rabbit was happy.";
-savedWords.textContent = text;
-let arraySavedWords = text.split(" ");
+let text =  ["Push yourself, because no one else is going to do it for you.", 
+"Failure is the condiment that gives success its flavor.", 
+"Wake up with determination. Go to bed with satisfaction.", 
+"It's going to be hard, but hard does not mean impossible.", 
+"Learning never exhausts the mind.", 
+"The only way to do great work is to love what you do."]
+const randomIndex = Math.floor(Math.random() * text.length);  
+savedWords.textContent = text[randomIndex];
+let newText = text[randomIndex];
+let arraySavedWords = newText.split(" ");
 
 function startTimer() {
-    interval = setInterval(function () {
+    interval = setInterval(function() {
         --seconds;
         if (seconds === 0) {
             document.getElementById("reset").style.display = "block";
@@ -65,8 +71,9 @@ function startWrite() {
     if (start) {
         startTimer();
         start = false;
-        allowInput = true;
         inputElement.disabled = false; 
+        allowInput = true;
+
     }    
 }
 
